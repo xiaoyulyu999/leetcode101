@@ -20,10 +20,33 @@ def build_tree(values):
 
 # Main test
 if __name__ == '__main__':
-    tree_list = [1,4,3,7,6,8,5,None,None,None,None,9,None,10]
 
-    root = build_tree(tree_list)
+    try:
+        tree_list = [1, 4, 3, 7, 6, 8, 5, None, None, None, None, 9, None, 10]
+        root = build_tree(tree_list)
+        solution = Solution()
+        r = solution.run(root)
+        assert r == 3
+        print("Test passed")
+    except AssertionError:
+        print("Test failed")
 
-    solution = Solution()
-    r = solution.run(root)
-    print(r) #---3
+    try:
+        tree_list = [1,3,2,7,6,5,4]
+        root = build_tree(tree_list)
+        solution = Solution()
+        r = solution.run(root)
+        assert r == 3
+        print("Test passed")
+    except AssertionError:
+        print("Test failed")
+
+    try:
+        tree_list = [1,2,3,4,5,6]
+        root = build_tree(tree_list)
+        solution = Solution()
+        r = solution.run(root)
+        assert r == 0
+        print("Test passed")
+    except AssertionError:
+        print("Test failed")
