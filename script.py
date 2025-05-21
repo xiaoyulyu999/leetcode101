@@ -9,10 +9,17 @@ def create_tree(values):
     if not values:
         return None
 
-    root = TreeNode(values[0])
-    queue = deque([root])
+    tree_nodes_list = [TreeNode(var) if var is not None else None for var in values]
+    queue = deque(tree_nodes_list)
+    root = queue.pop()
 
-
+    for node in tree_nodes_list:
+        if node:
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+    return root
 
 if __name__ == '__main__':
 
