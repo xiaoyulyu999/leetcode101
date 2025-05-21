@@ -26,4 +26,4 @@ if __name__ == '__main__':
 
     solution = Solution()
     r = solution.run(root)
-    print(r)
+    print(r) #---3
