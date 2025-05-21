@@ -10,5 +10,4 @@ class TreeNode:
 
 class Solution:
 
-    def run(self, root: Optional[TreeNode]) -> int:
-        return 1
+    def run(self, root: Optional[TreeNode]) -> List[int]:
