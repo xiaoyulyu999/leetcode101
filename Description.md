@@ -46,3 +46,9 @@ Constraints:
 1 <= queries.length <= 105
 queries[i].length == 2
 0 <= li <= ri < nums.length
+
+Tip:
+different array tech --
+query = [inc, dec]
+dif = [x(inc) + 1, *, *, *, x(dic + 1) -1]
+len(dif) = len(nums) + 1
