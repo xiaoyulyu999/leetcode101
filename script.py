@@ -19,13 +19,13 @@ def create_tree(arr):
         current = queue.popleft()
 
         # Left child
-        if i < len(arr) and arr[i] is not None:
+        if arr[i] is not None:
             current.left = TreeNode(arr[i])
             queue.append(current.left)
         i += 1
 
         # Right child
-        if i < len(arr) and arr[i] is not None:
+        if arr[i] is not None:
             current.right = TreeNode(arr[i])
             queue.append(current.right)
         i += 1
