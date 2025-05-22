@@ -14,10 +14,11 @@ class Solution:
     def run(self, root: Optional[TreeNode]) -> List[int]:
         q = deque([root])
         values = []
-        max_ = 0
+        if not root:
+            return values
         while q:
             level_length = len(q)
-
+            max_ = -float('inf')
             for _ in range(level_length):
                 node = q.popleft()
                 max_ = node.val if node.val > max_ else max_
