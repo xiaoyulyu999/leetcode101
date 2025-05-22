@@ -7,7 +7,7 @@ def create_tree(values):
     if not values:
         return None
 
-    nodes = [TreeNode(x) if x is not None else None for x in values]
+    nodes = [TreeNode(x) for x in values]
     kids = nodes[::-1]
     root = kids.pop()
 
