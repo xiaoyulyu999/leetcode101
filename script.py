@@ -11,15 +11,24 @@ def create_tree(arr):
     if not arr:
         return None
 
-    nodes = [TreeNode(var) for var in arr]
-    kids = deque(nodes[::-1])
-    root = kids.pop()
+    root = TreeNode(arr[0])
+    queue = deque([root])
+    i = 1
 
-    for node in nodes:
-        if kids:
-            node.left = kids.pop()
-        if kids:
-            node.right = kids.pop()
+    while queue and i < len(arr):
+        current = queue.popleft()
+
+        # Left child
+        if i < len(arr) and arr[i] is not None:
+            current.left = TreeNode(arr[i])
+            queue.append(current.left)
+        i += 1
+
+        # Right child
+        if i < len(arr) and arr[i] is not None:
+            current.right = TreeNode(arr[i])
+            queue.append(current.right)
+        i += 1
 
     return root
 
