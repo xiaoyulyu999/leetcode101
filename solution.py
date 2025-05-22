@@ -1,8 +1,6 @@
 from typing import List, Optional
 from collections import deque
 
-from jedi.plugins.stdlib import tree_name_to_values
-
 
 # Definition for a binary tree node.
 class TreeNode:
@@ -29,6 +27,4 @@ class Solution:
                     if node.right:
                         q.append(node.right)
             values.append(max_)
-
-
         return values
