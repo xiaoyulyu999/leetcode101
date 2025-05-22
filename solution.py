@@ -15,15 +15,12 @@ class Solution:
     def dfs(self, root: Optional[TreeNode]) -> list[Any]:
         if not root:
             return []
-
         q = deque([root])
         values = []
 
         while q:
             for _ in range(len(q)):
                 node = q.popleft()
-                print(f"Processing node: {node} (type {type(node)})")  # debug line
-
                 if node:
                     values.append(node.val)
                     q.append(node.left)
