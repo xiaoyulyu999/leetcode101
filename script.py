@@ -27,10 +27,10 @@ def create_tree(arr):
 if __name__ == '__main__':
     test_1 = [1, 2, 2, 3, 4, 4, 3]
     test_2 = [1, 2, 2, None, 3, None, 3]
-    test_3 = [1, 2, 2, None, 3, None, 3]
+    test_3 = [1, 2, 2, None, 3, 3, None]
     tests = [test_1, test_2, test_3]
     answers = [
-        True, False, False
+        True, False, True
     ]
     for indx, test in enumerate(tests):
         rooter = create_tree(test)
