@@ -29,13 +29,13 @@ if __name__ == '__main__':
         [1, 3],
         [1, 3, 9]
     ]
-    for indx, test in enumerate(tests):
+    for index, test in enumerate(tests):
         rooter = create_tree(test)
         try:
             solution = Solution()
             r = solution.run(rooter)
             print(r)
-            assert r == answers[indx]
+            assert r == answers[index]
             print("Test passed")
         except AssertionError:
             print("Test failed")
