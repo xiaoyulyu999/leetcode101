@@ -1,21 +1,22 @@
-from collections import deque
-
 from solution import Solution, TreeNode
 
 solution = Solution()
 
 
-# Main test
+def create_tree(values):
+    if not values:
+        return None
 
-def create_tree(arr):
-    nodes = [TreeNode(var) for var in arr]
-    queue = deque(nodes[::-1])
+    nodes = [TreeNode(x) if x is not None else None for x in values]
+    kids = nodes[::-1]
+    root = kids.pop()
 
-    root = queue.pop()
     for node in nodes:
         if node:
-            node.left = queue.pop() if queue else None
-            node.right = queue.pop() if queue else None
+            if kids:
+                node.left = kids.pop()
+            if kids:
+                node.right = kids.pop()
     return root
 
 
