@@ -13,6 +13,9 @@ class TreeNode:
 class Solution:
 
     def dfs(self, root: Optional[TreeNode]) -> list[Any]:
+        if not root:
+            return []
+
         q = deque([root])
         values = []
 
