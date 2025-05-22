@@ -16,10 +16,11 @@ def create_tree(arr):
     root = kids.pop()
 
     for node in nodes:
-        if kids:
-            node.left = kids.pop()
-        if kids:
-            node.right = kids.pop()
+        if node:
+            if kids:
+                node.left = kids.pop()
+            if kids:
+                node.right = kids.pop()
 
     return root
 
