@@ -1,3 +1,4 @@
+from collections import deque
 from typing import Optional
 
 
@@ -11,10 +12,18 @@ class TreeNode:
 
 class Solution:
 
-    def sum_node(self, root: Optional[TreeNode]) -> int:
-        if root is None:
-            return 0
-        return root.val + self.sum_node(root.left) + self.sum_node(root.right)
+    def bfs_bool(self, current_sum: int, root: Optional[TreeNode], targetSum) -> bool:
+        if not root:
+            return False
+        current_sum += root.val
+        if not root.left and not root.right:
+            return current_sum == targetSum
+        else:
+            return (self.bfs_bool(current_sum + root.val, root.left, targetSum)
+                    or
+                    self.bfs_bool(current_sum + root.val, root.right, targetSum))
 
-    def run(self, root: Optional[TreeNode]) -> int:
-        return 1
+
+    def run(self, root: Optional[TreeNode], targetSum: int) -> bool:
+
+        return self.bfs_bool(0, root, targetSum)

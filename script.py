@@ -38,7 +38,7 @@ if __name__ == '__main__':
         rooter = create_tree(test)
         try:
             solution = Solution()
-            r = solution.run(rooter)
+            r = solution.run(rooter, test[1])
             print(r)
             assert r == answers[indx]
             print("Test passed")
