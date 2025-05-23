@@ -15,6 +15,7 @@ def create_tree(arr):
 
         if arr[i] is not None:
             node.left = TreeNode(arr[i])
+
             queue.append(node.left)
         i += 1
 
