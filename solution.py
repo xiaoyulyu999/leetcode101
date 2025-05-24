@@ -1,4 +1,3 @@
-from collections import deque
 from typing import Optional
 
 
@@ -15,6 +14,7 @@ class Solution:
     def bfs_bool(self, current_sum: int, root: Optional[TreeNode], targetSum) -> bool:
         if not root:
             return False
+        print(current_sum, root.val)
         current_sum += root.val
         if not root.left and not root.right:
             return current_sum == targetSum

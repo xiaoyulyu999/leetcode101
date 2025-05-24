@@ -7,6 +7,9 @@ solution = Solution()
 
 # Main test
 def create_tree(arr):
+    if not arr:
+        return None
+
     root = TreeNode(arr[0])
     queue = deque([root])
     i = 1
@@ -15,7 +18,6 @@ def create_tree(arr):
 
         if arr[i] is not None:
             node.left = TreeNode(arr[i])
-
             queue.append(node.left)
         i += 1
 
@@ -35,7 +37,7 @@ if __name__ == '__main__':
         True, False, False
     ]
     for indx, test in enumerate(tests):
-        rooter = create_tree(test)
+        rooter = create_tree(test[0])
         try:
             solution = Solution()
             r = solution.run(rooter, test[1])
