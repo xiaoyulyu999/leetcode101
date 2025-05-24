@@ -19,9 +19,9 @@ class Solution:
         if not root.left and not root.right:
             return current_sum == targetSum
         else:
-            return (self.bfs_bool(current_sum + root.val, root.left, targetSum)
+            return (self.bfs_bool(current_sum, root.left, targetSum)
                     or
-                    self.bfs_bool(current_sum + root.val, root.right, targetSum))
+                    self.bfs_bool(current_sum, root.right, targetSum))
 
 
     def run(self, root: Optional[TreeNode], targetSum: int) -> bool:
