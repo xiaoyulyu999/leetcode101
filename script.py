@@ -5,17 +5,16 @@ solution = Solution()
 
 
 if __name__ == '__main__':
-    test_1 = [0, -1]
-    test_2 = [1, 2, 3]
-    test_3 = [1, 3, 2, 5, 3, None, 9]
+    test_1 = [2,7,11,15]
+    test_2 = [3,2,4]
+    test_3 = [3,3]
     tests = [test_1, test_2, test_3]
     answers = [
-        [0, -1],
-        [1, 3],
-        [1, 3, 9]
+        9,
+        6,
+        6
     ]
     for indx, test in enumerate(tests):
-        rooter = create_tree(test)
         try:
             solution = Solution()
             r = solution.run(rooter)

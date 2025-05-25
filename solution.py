@@ -1,14 +1,7 @@
-from typing import List, Optional
-from collections import deque
+from typing import List
 
-# Definition for a binary tree node.
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
 
 class Solution:
 
-    def run(self, root: Optional[TreeNode]) -> int:
-        return 1
+    def run(self, nums: List[int], target: int) -> List[int]:
+        return []
