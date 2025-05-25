@@ -1,11 +1,14 @@
-from typing import List
+from typing import List, Optional
+from collections import deque
 
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
 
 class Solution:
-    def isZeroArray(self, nums: List[int], queries: List[List[int]]):
-        for query in queries:
-            inc, dec = query
-            diff = [0] * (len(nums) + 1)
 
-            nums[inc] += 1
-            nums[dec + 1] -= 1
+    def run(self, root: Optional[TreeNode]) -> int:
+        return 1

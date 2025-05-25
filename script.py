@@ -1,11 +1,26 @@
-from solution import Solution
+from solution import Solution, TreeNode
 
 solution = Solution()
+# Main test
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    nums = [1,0,1]
-    queries = [[0,2]]
-    r = solution.isZeroArray(nums, queries)
-    print(r)
+    test_1 = [0, -1]
+    test_2 = [1, 2, 3]
+    test_3 = [1, 3, 2, 5, 3, None, 9]
+    tests = [test_1, test_2, test_3]
+    answers = [
+        [0, -1],
+        [1, 3],
+        [1, 3, 9]
+    ]
+    for indx, test in enumerate(tests):
+        rooter = create_tree(test)
+        try:
+            solution = Solution()
+            r = solution.run(rooter)
+            print(r)
+            assert r == answers[indx]
+            print("Test passed")
+        except AssertionError:
+            print("Test failed")
