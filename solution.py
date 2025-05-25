@@ -1,4 +1,3 @@
-from collections import deque
 from typing import Optional
 
 
@@ -13,20 +12,11 @@ class Node:
 
 class Solution:
 
-    def run(self, root: 'Optional[Node]') -> 'Optional[Node]':
-        if not root:
-            return None
+    def run(self, node: 'Optional[Node]') -> 'Optional[Node]':
+        curr, nxt = node, node.left if node else None
 
-        q = deque([root])
-
-        while q:
-            size = len(q)
-            for _ in range(size):
-                node = q.popleft()
-                if node.left:
-                    q.append(node.left)
-                if node.right:
-                    q.append(node.right)
-                if not node.next:
-                    node.next = node.right
-        return root
+        while curr and nxt:
+            curr.left.next = curr.right
+            if curr.next:
+                curr.right.next = curr.next.left
+            curr = curr.next
