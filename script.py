@@ -1,7 +1,31 @@
+from collections import deque
+
 from solution import Solution, TreeNode
 
 solution = Solution()
+
+
 # Main test
+
+def create_tree(arr):
+    if not arr:
+        return None
+
+    root = TreeNode(arr[0])
+    q = deque([root])
+
+    i = 1
+    while i < len(arr):
+        node = q.popleft()
+        if arr[i] is not None and i < len(arr):
+            node.left = TreeNode(arr[i])
+            q.append(node.left)
+        i += 1
+        if i < len(arr) and arr[i] is not None:
+            node.right = TreeNode(arr[i])
+            q.append(node.right)
+        i += 1
+    return root
 
 
 if __name__ == '__main__':
