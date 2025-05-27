@@ -3,13 +3,8 @@ from typing import List
 
 class Solution:
 
-    def run(self, nums: List[int], target: int) -> List[int]:
+    def run(self, s: str) -> int:
+        max_checker = {}
+        for i in range(len(s)):
 
-        hashtable = {}
-        for idx, num in enumerate(nums):
-
-            if target - num in hashtable:
-                return [hashtable[target - num], idx]
-            else:
-                hashtable[num] = idx
-        return []
+        return max(max_checker)

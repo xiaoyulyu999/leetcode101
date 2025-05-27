@@ -5,10 +5,10 @@ solution = Solution()
 
 
 if __name__ == '__main__':
-    test_1 = [2, 7, 11, 15]
-    test_2 = [3, 2, 4]
-    test_3 = [3, 3]
-    tests = [(test_1, 9), (test_2, 6), (test_3, 6)]
+    test_1 = "abcabcbb"
+    test_2 = "bbbbb"
+    test_3 = "pwwkew"
+    tests = [(test_1, 3), (test_2, 1), (test_3, 3)]
     answers = [
         [0, 1],
         [1, 2],
@@ -18,9 +18,9 @@ if __name__ == '__main__':
         try:
             ls, target = test
             solution = Solution()
-            r = solution.run(ls, target)
+            r = solution.run(ls)
             print(r)
-            assert r == answers[indx]
+            assert r == target
             print("Test passed")
         except AssertionError:
             print("Test failed")
