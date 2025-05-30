@@ -1,10 +1,13 @@
-from typing import List
-
-
 class Solution:
 
     def run(self, s: str) -> int:
-        max_checker = {}
-        for i in range(len(s)):
+        charSet = set()
+        l = 0
+        count = 0
+        for r in range(len(s)):
+            while s[r] in charSet:
+                charSet.remove(s[l])
+                l += 1
 
-        return max(max_checker)
+            charSet.add(s[r])
+            count = max(count, r - l + 1)

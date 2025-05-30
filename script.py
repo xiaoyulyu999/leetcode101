@@ -8,7 +8,8 @@ if __name__ == '__main__':
     test_1 = "abcabcbb"
     test_2 = "bbbbb"
     test_3 = "pwwkew"
-    tests = [(test_1, 3), (test_2, 1), (test_3, 3)]
+    test_4 = "au"
+    tests = [(test_1, 3), (test_2, 1), (test_3, 3), (test_4, 2)]
     answers = [
         [0, 1],
         [1, 2],
