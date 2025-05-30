@@ -5,11 +5,10 @@ solution = Solution()
 
 
 if __name__ == '__main__':
-    test_1 = "abcabcbb"
-    test_2 = "bbbbb"
-    test_3 = "pwwkew"
-    test_4 = "au"
-    tests = [(test_1, 3), (test_2, 1), (test_3, 3), (test_4, 2)]
+    test_1 = 3749
+    test_2 = 58
+    test_3 = 1994
+    tests = [(test_1, "MMMDCCXLIX"), (test_2, "LVIII"), (test_3, "MCMXCIV")]
     answers = [
         [0, 1],
         [1, 2],
