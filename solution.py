@@ -11,3 +11,4 @@ class Solution:
 
             charSet.add(s[r])
             count = max(count, r - l + 1)
+        return count
